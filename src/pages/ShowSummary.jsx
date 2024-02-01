@@ -1,12 +1,17 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import { CgWebsite } from "react-icons/cg";
 import Modal from "../components/Others/Modal";
+import { IoReturnUpBack } from "react-icons/io5";
 
 const ShowSummary = () => {
   const showData = useLoaderData();
   console.log(showData);
+
+  const navigate = useNavigate()
   return (
     <article className="rounded-xl bg-white p-4 ring ring-indigo-50 sm:p-6 lg:p-8">
+        <button onClick={()=>navigate(-1)} className="btn btn-sm mb-4 border-2 border-pink-500"><IoReturnUpBack className="inline mr-2 " />
+Go Back</button>
       <div className="flex flex-col justify-center items-center md:flex-row md:items-start sm:gap-8 ">
         <div className="w-[50%] lg:mr-10 mx-auto rounded-xl ">
           <img
@@ -65,7 +70,7 @@ const ShowSummary = () => {
                 ></path>
               </svg>
 
-              <p className="text-xs font-medium">{showData.runtime} minutes</p>
+              <p className="text-xs font-medium">{showData.runtime} minutes runtime</p>
             </div>
 
             <span className="hidden sm:block" aria-hidden="true">
@@ -91,7 +96,7 @@ const ShowSummary = () => {
               <span className="font-semibold">Status : </span> {showData?.status}
             </div>
             <div>
-              <span className="font-semibold">Status : </span> {showData?.status}
+              <span className="font-semibold">Aired : </span> {showData?.premiered}
             </div>
             <div>
               <span className="font-semibold">Status : </span> {showData?.status}

@@ -1,5 +1,6 @@
-import toast from "react-hot-toast";
+
 import PropTypes from "prop-types";
+import { toast } from 'react-hot-toast';
 const Modal = ({movie}) => {
     const handleSubmit = (e)=>{
         e.preventDefault();
@@ -16,7 +17,7 @@ const Modal = ({movie}) => {
         }
         console.log(ticketData);
         localStorage.setItem("pusrchaseData", JSON.stringify(ticketData) )
-        
+       
         toast.success("Succesfully Bought Tickets!")
         
     }
